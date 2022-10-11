@@ -1,0 +1,9 @@
+# Ignore Mac system files
+.DS_store
+.idea
+*.zip
+*.sh
+*.pdf
+.ipynb_checkpoints/
+ckpts/
+ckpts_drive/
