@@ -6,11 +6,11 @@
 This repo contains code for training distilled dataset using neural feature regression (NeurIPS 2022). Please see our
 paper and project page for more results.
 
-<figure>
-<img src="asset/res32_6x6.png" alt="cifar100_res32_6x6" width="275" height="275">
-<img src="asset/res64_5x5.png" alt="tinyimagenet_res64_5x5" width="275" height="275">
-<img src="asset/res128_4x4.png" alt="imagenet_res128_4x4" width="275" height="275">
-</figure>
+<p align="middle">
+<img src="asset/res32_6x6.png" alt="cifar100_res32_6x6" width="32%"/>
+<img src="asset/res64_5x5.png" alt="tinyimagenet_res64_5x5" width="32%"/>
+<img src="asset/res128_4x4.png" alt="imagenet_res128_4x4" width="32%"/>
+</p>
 
 ## Abstract
 
