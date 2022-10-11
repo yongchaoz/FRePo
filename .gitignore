@@ -7,3 +7,6 @@
 .ipynb_checkpoints/
 ckpts/
 ckpts_drive/
+train_log/
+train_img/
+eval_log/
