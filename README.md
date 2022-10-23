@@ -1,7 +1,8 @@
 # Dataset Distillation using Neural Feature Regression (FRePo)
 
 [Project Page](https://sites.google.com/view/frepo) | [OpenReview](https://openreview.net/forum?id=2clwrA2tfik)
-| [ArXiv](https://arxiv.org/abs/2206.00719)
+| [ArXiv](https://arxiv.org/abs/2206.00719) | [Video](https://recorder-v3.slideslive.com/#/share?share=75661&s=b6c2d107-2ff6-44a5-aadf-f2a600467abd) 
+| [Slides](https://docs.google.com/presentation/d/10NMtEVsW-nbEWgbTEJQYMH-rdgOklXZF/edit?usp=sharing&ouid=116990789292430026134&rtpof=true&sd=true)
 
 This repo contains code for training distilled dataset using neural feature regression (NeurIPS 2022). Please see our
 paper and project page for more results.
