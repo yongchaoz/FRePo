@@ -99,7 +99,7 @@ python -m script.eval $ckpt $path $arch
     - res_dir: evaluation result output directory
 
 <p align="middle">
-<img src='asset/distillation_animation_real.gif' width="90%">
+<img src='asset/distillation_animation.gif' width="90%">
 </p>
 
 ### Checkpoints ([Link](https://drive.google.com/drive/folders/1z_1s_nxBmFkbVvGqveLtefOsYmMw6Q25?usp=sharing))
