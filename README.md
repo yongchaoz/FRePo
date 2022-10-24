@@ -98,7 +98,9 @@ python -m script.eval $ckpt $path $arch
     - ckpt_name: checkpoint to evaluate. Choice: ['best_ckpt', 'proto', 'saved_ckpt']
     - res_dir: evaluation result output directory
 
-<img src='asset/distillation_animation_real.gif' width=600>
+<p align="middle">
+<img src='asset/distillation_animation_real.gif' width="90%">
+</p>
 
 ### Checkpoints ([Link](https://drive.google.com/drive/folders/1z_1s_nxBmFkbVvGqveLtefOsYmMw6Q25?usp=sharing))
 
