@@ -1,7 +1,8 @@
 # Dataset Distillation using Neural Feature Regression (FRePo)
 
 [Project Page](https://sites.google.com/view/frepo) | [OpenReview](https://openreview.net/forum?id=2clwrA2tfik)
-| [ArXiv](https://arxiv.org/abs/2206.00719) | [Video](https://recorder-v3.slideslive.com/#/share?share=75661&s=b6c2d107-2ff6-44a5-aadf-f2a600467abd) 
+| [ArXiv](https://arxiv.org/abs/2206.00719)
+| [Video](https://recorder-v3.slideslive.com/#/share?share=75661&s=b6c2d107-2ff6-44a5-aadf-f2a600467abd)
 | [Slides](https://docs.google.com/presentation/d/10NMtEVsW-nbEWgbTEJQYMH-rdgOklXZF/edit?usp=sharing&ouid=116990789292430026134&rtpof=true&sd=true)
 
 This repo contains code for training distilled dataset using neural feature regression (NeurIPS 2022). Please see our
@@ -26,6 +27,27 @@ through time with a pool of models to alleviate various types of overfitting in 
 significantly outperforms the previous methods on CIFAR100, Tiny ImageNet, and ImageNet-1K. Furthermore, we show that
 high-quality distilled data can greatly improve various downstream applications, such as continual learning and
 membership inference defense.
+
+<img src='asset/dd_animation.gif' width=600>
+
+## What is FRePo?
+
+To compute the meta gradient efficiently, FRePo only trains the last layer of a neural network to convergence while
+keeping the feature extractor fixed. In this case, computing the prediction on the real data using the model trained
+on the distilled data can be expressed as a kernel ridge regression and computing the meta-gradient is simply
+back-propagating through the kernel and a fixed feature extractor. As shown in the animation, FRePo is analogous
+to 1-step TBPTT as it computes the meta-gradient at each step while performing the online model update. However, instead
+of backpropagating through the inner optimization, FRePo computes the meta-gradient through a kernel and feature
+extractor.
+
+<img src='asset/frepo_animation.gif' width=600>
+
+To alleviate overfitting, FRePo maintains a diverse pool of models instead of periodically training and
+resetting a single model. From the meta-learning perspective, we maintain a diverse set of meta-tasks to sample from
+and avoid sampling very similar tasks at each consecutive gradient computation to avoid overfitting to a particular
+setup.
+
+<img src='asset/frepo_pool_animation.gif' width=600>
 
 ## Getting Started
 
@@ -69,6 +91,8 @@ python -m script.eval $ckpt $path $arch
     - ckpt_dir: checkpoint directory
     - ckpt_name: checkpoint to evaluate. Choice: ['best_ckpt', 'proto', 'saved_ckpt']
     - res_dir: evaluation result output directory
+
+<img src='asset/distillation_animation_real.gif' width=600>
 
 ### Checkpoints ([Link](https://drive.google.com/drive/folders/1z_1s_nxBmFkbVvGqveLtefOsYmMw6Q25?usp=sharing))
 
