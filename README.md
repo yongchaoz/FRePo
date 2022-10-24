@@ -28,7 +28,9 @@ significantly outperforms the previous methods on CIFAR100, Tiny ImageNet, and I
 high-quality distilled data can greatly improve various downstream applications, such as continual learning and
 membership inference defense.
 
-<img src='asset/dd_animation.gif' width=600>
+<p align="middle">
+<img src='asset/dd_animation.gif' width="95%">
+</p>
 
 ## What is FRePo?
 
@@ -40,14 +42,18 @@ to 1-step TBPTT as it computes the meta-gradient at each step while performing t
 of backpropagating through the inner optimization, FRePo computes the meta-gradient through a kernel and feature
 extractor.
 
-<img src='asset/frepo_animation.gif' width=600>
+<p align="middle">
+<img src='asset/frepo_animation.gif' width="95%">
+</p>
 
 To alleviate overfitting, FRePo maintains a diverse pool of models instead of periodically training and
 resetting a single model. From the meta-learning perspective, we maintain a diverse set of meta-tasks to sample from
 and avoid sampling very similar tasks at each consecutive gradient computation to avoid overfitting to a particular
 setup.
 
-<img src='asset/frepo_pool_animation.gif' width=600>
+<p align="middle">
+<img src='asset/frepo_pool_animation.gif' width="95%">
+</p>
 
 ## Getting Started
 
