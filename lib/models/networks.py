@@ -213,6 +213,9 @@ class Conv(nn.Module):
             raise ValueError('Unknown Normalization Layer {}!'.format(self.normalization))
 
         for i in range(self.depth):
+            if i != 0 and self.normalization != 'identity':
+                x = norm_layer()(x)
+
             if i == 0 and channel == 1:
                 pad = (self.kernel_size[0] // 2 + 2, self.kernel_size[0] // 2 + 2)
             else:
@@ -220,8 +223,6 @@ class Conv(nn.Module):
 
             x = nn.Conv(features=self.width * (2 ** i), kernel_size=self.kernel_size,
                         padding=(pad, pad), use_bias=True, dtype=self.dtype)(x)
-            if not self.normalization == 'identity':
-                x = norm_layer()(x)
             x = nn.relu(x)
             x = nn.avg_pool(x, (2, 2), strides=(2, 2))
 
