@@ -151,7 +151,21 @@ def main(dataset_name, data_path=None, zca_path=None, train_log=None, train_img=
         use_flip = True
         aug_strategy = 'flip_color_crop_rotate_translate_cutout'
 
-    if dataset_name == 'tiny_imagenet':
+    if dataset_name == 'cifar100':
+        if num_prototypes_per_class == 1:
+            use_flip = True
+            num_online_eval_updates = 1000
+        elif num_prototypes_per_class == 10:
+            use_flip = False
+            num_online_eval_updates = 2000
+        elif num_prototypes_per_class == 50:
+            use_flip = False
+            num_online_eval_updates = 5000
+        else:
+            raise ValueError(
+                'Unsupported prototypes per class {} for {}'.format(num_prototypes_per_class, dataset_name))
+
+    elif dataset_name == 'tiny_imagenet':
         if num_prototypes_per_class == 1:
             use_flip = True
             num_online_eval_updates = 1000
