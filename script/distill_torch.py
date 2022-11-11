@@ -459,7 +459,7 @@ def main(dataset_name, data_path=None, zca_path=None, train_log=None, train_img=
             x_norm = torch.mean(torch.linalg.norm(x_syn.view(x_syn.shape[0], -1), ord=2, dim=-1)).cpu().numpy()
             y_norm = torch.mean(torch.linalg.norm(y_syn.view(y_syn.shape[0], -1), ord=2, dim=-1)).cpu().numpy()
             summary = {'train/loss': loss_sum / count,
-                       'train/ln_loss': loss_sum / count,
+                       'train/ln_loss': ln_loss_sum / count,
                        'train/lb_loss': lb_loss_sum / count,
                        'monitor/steps_per_second': count / 1024 / (time.time() - last_t),
                        'monitor/learning_rate': synsch.get_last_lr()[0],
